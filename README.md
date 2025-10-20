@@ -91,6 +91,32 @@ Do you want another movie (y/[n])? n
 - [ ] Add movie trailer links
 - [ ] Implement user ratings and watchlist functionality
 
+## Troubleshooting
+
+### SSL Certificate Errors
+If you encounter SSL certificate verification errors (common in corporate networks):
+
+```
+[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed
+```
+
+The application includes automatic fallback handling for SSL issues. If problems persist:
+
+1. **Corporate Networks**: Contact your IT department about SSL certificate policies
+2. **Manual Fix**: The app will automatically try without SSL verification
+3. **Alternative**: Use a personal network or mobile hotspot for testing
+
+### Network Connection Issues
+- Ensure you have an active internet connection
+- Check if IMDb is accessible in your browser
+- Verify firewall/proxy settings aren't blocking the connection
+
+### Missing Dependencies
+If you get import errors:
+```bash
+pip install --upgrade requests beautifulsoup4 urllib3
+```
+
 ## Disclaimer
 
 This application scrapes data from IMDb for educational purposes. Please be respectful of IMDb's terms of service and consider implementing appropriate rate limiting for production use.
